@@ -1,12 +1,7 @@
 package transport;
 
-public class Car {
-    private final String brand;
-    private final String model;
+public class Car extends Transport {
     private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
     private String gear;
     private final String bodyType;
     private String regNumber;
@@ -43,27 +38,10 @@ public class Car {
                 String regNumber,
                 int capacity,
                 boolean summerTyres,
-                Key key) {
-        if (brand == null || brand.isEmpty()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty()) {
-            this.model = "deafult";
-        } else {
-            this.model = model;
-        }
+                Key key,
+                int maxSpeed) {
+        super(brand, model, color, productionCountry, productionYear, maxSpeed);
         setEngineVolume(engineVolume);
-        setColor(color);
-        if (productionYear <=0) {
-            productionYear = 2000;
-        }
-        this.productionYear = productionYear;
-        if (productionCountry == null || productionCountry.isEmpty()) {
-            productionCountry = "default";
-        }
-        this.productionCountry = productionCountry;
         setGear(gear);
         if (bodyType == null || bodyType.isEmpty()) {
             bodyType = "седан";
@@ -87,17 +65,6 @@ public class Car {
             this.engineVolume = engineVolume;
         }
     }
-    public String getColor () {
-        return color;
-    }
-    public void setColor (String color) {
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
     public String getGear () {
         return gear;
     }
@@ -134,6 +101,6 @@ public class Car {
        }
     }
     public String toString () {
-        return brand + model + ", " + productionYear + " год выпуска, сборка в " + productionCountry + ", цвет кузова: " + color + ", объем двигателя: " + engineVolume + " л, тип кузова: " + bodyType + ", коробка передач: " + gear + ", регистрационный номер: " + regNumber + ", кол-во мест: " + capacity + ", " + (summerTyres?"летняя":"зимняя") + " резина" + ", " + key;
+        return getBrand() + getModel() + ", " + getProductionYear() + " год выпуска, сборка в " + getProductionCountry() + ", цвет кузова: " + getColor() + ", объем двигателя: " + engineVolume + " л, тип кузова: " + bodyType + ", коробка передач: " + gear + ", регистрационный номер: " + regNumber + ", кол-во мест: " + capacity + ", " + (summerTyres?"летняя":"зимняя") + " резина" + ", " + key;
     }
 }

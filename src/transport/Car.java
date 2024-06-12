@@ -8,6 +8,12 @@ public class Car extends Transport {
     private final int capacity;
     private boolean summerTyres;
     private Key key;
+
+    @Override
+    public void refill() {
+       System.out.println("Можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках, если это электрокар!");
+    }
+
     public static class Key {
         private final boolean remoteRun;
         private final boolean withoutAccess;

@@ -17,11 +17,13 @@ public class Main {
         System.out.println(hyundai);
         hyundai.changeTyres(7);
         System.out.println(hyundai);
+        hyundai.refill();
 
         Train swallow = new Train("Поезд Ласточка","B-901",null,"Росиии",2011,301,3500,null, "Белорусского вокзала", "Минск-Пассажирский", 11);
         System.out.println(swallow);
         Train leningrad = new Train("Поезд Ленинград", "D-125",null,"России",2019,270,1700,null,"Ленинградского вокзала","Ленинград-Пассажирский",8);
         System.out.println(leningrad);
+        leningrad.refill();
 
         Bus bus = new Bus("Volvo", "", "синий", "России",2010,100);
         System.out.println(bus);
@@ -29,6 +31,8 @@ public class Main {
         System.out.println(bus1);
         Bus bus2 = new Bus("Volvo","","синий", "Швеции",2023,130);
         System.out.println(bus2);
+        bus2.refill();
+
 
 
     }

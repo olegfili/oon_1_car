@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
     private int productionYear;
@@ -74,4 +74,5 @@ public class Transport {
             this.maxSpeed = maxSpeed;
         }
         }
-    }
+        public abstract void refill();
+}

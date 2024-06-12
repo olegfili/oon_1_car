@@ -68,4 +68,9 @@ public class Train extends Transport {
     public String toString () {
         return getBrand() + ", модель: " + getModel() + ", " + getProductionYear() + " год выпуска в " + getProductionCountry() + ", скорость передвижения - " + getMaxSpeed() + " км/ч, отходит от " + getNameStation() + " и следует до станции " + getFinalStop() + ". Цена поездки - " + getPrice() + " рублей, в поезде " + getNumberWagons() + " вагонов" ;
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Нужно заправлять дизелем!");
+    }
 }

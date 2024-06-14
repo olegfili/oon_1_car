@@ -3,8 +3,8 @@ package transport;
 public abstract class Transport {
     private String brand;
     private String model;
-    private int productionYear;
-    private String productionCountry;
+    private final int productionYear;
+    private final String productionCountry;
     private String color;
     private int maxSpeed;
 
